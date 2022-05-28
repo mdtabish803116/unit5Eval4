@@ -20,6 +20,8 @@ async function postData(){
        });
 
         displayData();
+
+        alert("Added Succesfully");
        }catch(err){
            console.log(error);
        }
@@ -60,15 +62,26 @@ function updateDom(data){
          let editBtn = document.createElement("Edit");
          editBtn.textContent = "Edit";
          editBtn.style.cursor = "pointer";
+         editBtn.addEventListener("click" , function(){
+               localStorage.setItem("titleId" , each.id);
+               window.location.href = "./edit.html";
+         })
          box.append(title, deleteBtn , editBtn);
          document.getElementById("appendBox").append(box);
     })
 }
 
 async function deleteFunction(id){
+    try {  
     let res = await fetch(`http://localhost:3000/tasks/${id}` ,{
         method : "DELETE"
     });
+
+    alert("Deleted Successfully");
+
+}catch(error){
+    console.log(error);
+}
 
 }
 
