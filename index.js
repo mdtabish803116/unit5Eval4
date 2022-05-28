@@ -52,12 +52,24 @@ function updateDom(data){
          let deleteBtn = document.createElement("button");
          deleteBtn.textContent = "Delete";
          deleteBtn.style.cursor = "pointer";
+        deleteBtn.addEventListener("click" , function(){
+             deleteFunction(each.id);
+             displayData();
+        })
+
          let editBtn = document.createElement("Edit");
          editBtn.textContent = "Edit";
          editBtn.style.cursor = "pointer";
          box.append(title, deleteBtn , editBtn);
          document.getElementById("appendBox").append(box);
     })
+}
+
+async function deleteFunction(id){
+    let res = await fetch(`http://localhost:3000/tasks/${id}` ,{
+        method : "DELETE"
+    });
+
 }
 
 async function displayData(){
