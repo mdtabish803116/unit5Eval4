@@ -1,0 +1,51 @@
+h1 {
+    text-align : center;
+    font-family : sans-serif;
+}
+#tilteContainer{
+    width : 60%;
+    margin : auto;
+    display : flex;
+    justify-content : space-between;
+    height : 80px;
+    align-items : center;
+    background : #eee;
+    border-radius : 5px;
+}
+
+
+#tilteContainer>*{
+    padding : 20px;
+    cursor : pointer;
+
+}
+
+#inputTitle{
+    width : 80%;
+    border-radius: 5px;
+    outline-color : teal;
+    font-size : 18px;
+}
+#addBtn{
+    background : teal;
+    border-radius : 5px;
+    color : white;
+}
+
+#appendBox>div{
+     display : flex;
+     width : 58%;
+     margin : auto;
+     justify-content : space-between;
+     height : 50px;
+     align-items : center;
+     font-family : sans-serif ;
+     font-size : 18px;
+     border : 1px solid teal;
+     border-radius : 5px;
+     padding : 0 10px;
+}
+
+#appendBox>div>div:nth-child(1){
+     width : 70%;
+}
